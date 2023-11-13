@@ -1,0 +1,29 @@
+{
+	"name": "Radare2 Launch",
+	"request": "launch",
+	"environment": [
+		{
+			"name": "config",
+			"value": "Run",
+		}
+	],
+	"cwd": "${workspaceFolder}",
+	"configurations": [
+		{
+			"command": "exec r2 -i main.r2.js /bin/ls",
+			"name": "Run JS in radare2",
+			"request": "launch",
+			"type": "node-terminal",
+			"suppressMultipleSessionWarning": true
+		},
+		{
+			"command": "exec r2 -i src/test.r2.ts /bin/ls",
+			"name": "Run TS in radare2",
+			"request": "launch",
+			"type": "node-terminal",
+			"outputCapture": "console",
+			"suppressMultipleSessionWarning": true
+		}
+	]
+}
+

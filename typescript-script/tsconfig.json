@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "outDir": "out",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
