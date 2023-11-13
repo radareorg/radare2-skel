@@ -1,0 +1,21 @@
+{
+  "name": "Radare2 Launch",
+  "request": "launch",
+  "environment": [
+    {
+      "name": "config",
+      "value": "Run"
+    }
+  ],
+  "cwd": "${workspaceFolder}",
+  "configurations": [
+    {
+      "command": "exec r2 -i src/myio.r2.js /bin/ls",
+      "name": "Run JS in radare2",
+      "request": "launch",
+      "type": "node-terminal",
+      "suppressMultipleSessionWarning": true
+    }
+  ]
+}
+

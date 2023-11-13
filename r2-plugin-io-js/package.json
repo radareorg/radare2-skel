@@ -1,0 +1,7 @@
+{
+  "name": "my first io plugin for radare2 in javascript",
+  "devDependencies": {
+    "r2papi": "^0.3.2",
+    "@types/node": "^20.9.0"
+  }
+}
