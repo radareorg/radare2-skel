@@ -1,4 +1,39 @@
 #!/bin/sh
 # TODO: eventually rewrite in Python to support Windows
-echo "Project Templates:"
-ls -F | grep /$ | sed -e 's,/,,' | xargs echo -
+SKELDIR=`dirname $(readlink $0)`
+WORKDIR="`pwd`"
+
+list_templates() {
+	(
+	 cd ${SKELDIR} || exit 1
+	 printf "Templates: "
+	 ls -F | grep /$ | sed -e 's,/,,'
+	)
+}
+
+case "$1" in
+"-l"|list)
+	list_templates
+	;;
+"-h"|"")
+	echo "Usage: r2skel [template] [new-directory]"
+	list_templates
+	;;
+*)
+	if [ -n "$2" ]; then
+		SD="${SKELDIR}/$1"
+		if [ ! -d "${SD}" ]; then
+			echo "Invalid skeleton name. See 'r2skel -l'"
+			exit 1
+		fi
+		if [ -d "${2}" ]; then
+			echo "Target directory already exists"
+			exit 1
+		fi
+		cp -rf "${SD}" "$2"
+	else
+		echo "Usage: r2skel [template] [new-directory]"
+	fi
+	;;
+esac
+
