@@ -1,0 +1,4 @@
+#!/bin/sh
+# TODO: eventually rewrite in Python to support Windows
+echo "Project Templates:"
+ls -F | grep /$ | sed -e 's,/,,' | xargs echo -
