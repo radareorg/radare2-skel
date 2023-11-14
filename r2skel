@@ -6,7 +6,6 @@ WORKDIR="`pwd`"
 list_templates() {
 	(
 	 cd ${SKELDIR} || exit 1
-	 printf "Templates: "
 	 ls -F | grep /$ | sed -e 's,/,,'
 	)
 }
@@ -17,7 +16,8 @@ case "$1" in
 	;;
 "-h"|"")
 	echo "Usage: r2skel [template] [new-directory]"
-	list_templates
+	printf "Templates: "
+	echo `list_templates`
 	;;
 *)
 	if [ -n "$2" ]; then
