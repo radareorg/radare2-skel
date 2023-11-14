@@ -1,0 +1,22 @@
+{
+  "name": "Radare2 Launch",
+  "request": "launch",
+  "environment": [
+    {
+      "name": "config",
+      "value": "Run"
+    }
+  ],
+  "cwd": "${workspaceFolder}",
+  "configurations": [
+    {
+      "command": "exec r2 -I src/coreplug.r2.ts -c 'mycore' /bin/ls",
+      "name": "Run TS in radare2",
+      "request": "launch",
+      "type": "node-terminal",
+      "outputCapture": "console",
+      "suppressMultipleSessionWarning": true
+    }
+  ]
+}
+
