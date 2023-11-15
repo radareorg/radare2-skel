@@ -3,6 +3,13 @@
 SKELDIR=`dirname $(readlink $0)`
 WORKDIR="`pwd`"
 
+list_languages() {
+	(
+	 cd ${SKELDIR} || exit 1
+	 ls -F|grep / | awk -F - '{print $4}'|sed -e 's,/,,'|sort -u
+	)
+}
+
 list_templates() {
 	(
 	 cd ${SKELDIR} || exit 1
@@ -14,10 +21,16 @@ case "$1" in
 "-l"|list)
 	list_templates
 	;;
+"-L"|langs)
+	list_languages
+	;;
 "-h"|"")
-	echo "Usage: r2skel [template] [new-directory]"
-	printf "Templates: "
-	echo `list_templates`
+	echo "r2skel [-lL] | [template] [new-directory]"
+	echo "Options:"
+	echo " -l - list all the available project templates"
+	echo " -L - list all the languages"
+	echo "Templates: "
+	list_templates | xargs -L1 echo ' -'
 	;;
 *)
 	if [ -n "$2" ]; then
