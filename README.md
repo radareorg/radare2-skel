@@ -12,4 +12,6 @@ Radare2 can be extended in many ways:
 And it is possible to use almost any languages to do so. Those templates include
 the `.vscode` and build files too. so you can quickly start doing real work!
 
+Supported and tested editors: Helix and VSCode.
+
 --pancake
