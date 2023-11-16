@@ -1,0 +1,13 @@
+{
+	"name": "my first r2 script",
+	"devDependencies": {
+		"@types/node": "^20.9.0",
+		"r2pipe": "^2.8.4"
+	},
+	"scripts": {
+		"script": "node example.js"
+	},
+	"dependencies": {
+		"r2pipe-promise": "^1.6.1"
+	}
+}
