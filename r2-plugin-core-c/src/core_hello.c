@@ -1,11 +1,10 @@
-
 /* radare - Copyright 2023 - yourname */
 
 #define R_LOG_ORIGIN "core.hello"
 
 #include <r_core.h>
 
-static int r_cmd_r2ai_client(void *user, const char *input) {
+static int r_cmd_hello_client(void *user, const char *input) {
 	RCore *core = (RCore *) user;
 	if (r_str_startswith (input, "hello")) {
 		r_cons_printf ("world\n");
@@ -22,7 +21,7 @@ RCorePlugin r_core_plugin_hello = {
 		.author = "pancake",
 		.license = "MIT",
 	},
-	.call = r_cmd_r2ai_client,
+	.call = r_cmd_hello_client,
 };
 
 #ifndef R2_PLUGIN_INCORE
