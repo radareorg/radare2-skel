@@ -1,6 +1,7 @@
 {
 	"name": "my first r2 script",
 	"devDependencies": {
+		"typescript": "^5.3.3",
 		"r2papi": "^0.3.2",
 		"@types/node": "^20.9.0"
 	}
