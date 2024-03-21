@@ -1,0 +1,14 @@
+{
+  "name": "r2pipe-ts-example",
+  "version": "0.1.0",
+  "description": "TypeScript r2pipe example",
+  "type": "commonjs",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.28",
+    "r2pipe-ts": "^0.1.0"
+  }
+}
