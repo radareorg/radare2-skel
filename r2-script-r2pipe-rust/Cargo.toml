@@ -1,0 +1,30 @@
+[package]
+name = "r2pipe-example"
+version = "0.1.0"
+authors = [
+  "pancake <pancake@nopcode.org>",
+]
+edition = "2018"
+description = "Program using r2pipe-rs to automate radare2 in Rust"
+
+# Repository
+repository = "https://github.com/radare/r2pipe.rs"
+documentation = "https://radare.github.io/r2pipe.rs/"
+
+keywords = ["r2", "debugger", "hex" , "editor", "radare"]
+
+# Readme link
+readme = "README.md"
+
+# License information
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+r2pipe = "*"
+serde = "1.0.118"
+serde_json = "1.0.60"
+serde_derive = "1.0.118"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
