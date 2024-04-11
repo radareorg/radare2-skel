@@ -8,7 +8,7 @@ let pacakge = Package(
         ],
         dependencies: [
                 .package(
-                    url: "https://github.com/radareorg/radare2-r2pipe", revision: "1.0.4"
+                    url: "https://github.com/radareorg/radare2-r2pipe", revision: "1.0.5"
                 ),
         ],
         targets: [
@@ -16,6 +16,9 @@ let pacakge = Package(
                 name: "r2pipeExample",
                 dependencies: [
                     .product(name: "r2pipe", package: "radare2-r2pipe")
+                ],
+                swiftSettings: [
+                    .define("USE_CCALL")
                 ]
             )
         ]

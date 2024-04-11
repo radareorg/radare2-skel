@@ -1,13 +1,29 @@
 import Foundation
+import R2Pipe
 
-/*
-// is 'r2pipe.swiftmodule' needed to import r2pipe?
-$ swiftc -emit-module -module-name r2pipe Sources/r2pipe/r2pipe*
-
-import r2pipe
-if let r2p = r2pipe.R2Pipe("#!ccall") {
+// print(R2Pipe.features)
+#if USE_CCALL
+if let r2p = R2Pipe("#!ccall") {
     print("Testint ccall")
+    if let res = r2p.cmdSync("?E Hello World") {
+        print(res)
+    } else {
+        print("Cannot run command")
+    }
+} else {
+    print("Cannot open ccall")
 }
-*/
+#endif
+
+if let r2p = R2Pipe("#!pipe") {
+    print("Testint ccall")
+    if let res = r2p.cmdSync("?E Hello World") {
+        print(res)
+    } else {
+        print("Cannot run command")
+    }
+} else {
+    print("Cannot open pipe")
+}
 
 print("Hello Swift")

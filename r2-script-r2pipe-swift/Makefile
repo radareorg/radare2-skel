@@ -1,5 +1,8 @@
+SWIFTFLAGS += -Xswiftc -Ir_core
+SWIFTFLAGS += -Xswiftc -DUSE_CCALL
+
 all:
-	swift build
+	swift build $(SWIFTFLAGS)
 	swift run
 
 clean:
