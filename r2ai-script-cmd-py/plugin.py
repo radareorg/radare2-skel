@@ -8,6 +8,5 @@ try:
   print(f"RES({res})")
   res = runline2(None, "-m")
   print(f"RES({res})")
-  ¢ print(f"RES({ais})")
 except:
   traceback.print_exc()
