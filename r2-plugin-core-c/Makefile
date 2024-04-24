@@ -9,7 +9,7 @@ OBJS=src/core_hello.o
 all: $(CORE_HELLO)
 
 $(CORE_HELLO): $(OBJS)
-	$(CC) $(LDFLAGS) -shared -fPIC -o $(CORE_HELLO) $(OBJS)
+	r2pm -r $(CC) $(LDFLAGS) -shared -fPIC -o $(CORE_HELLO) $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(CORE_HELLO)
