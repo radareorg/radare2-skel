@@ -1,6 +1,10 @@
 #!/bin/sh
 # TODO: eventually rewrite in Python to support Windows
-SKELDIR=`dirname $(readlink $0)`
+if [ -L "$0" ]; then
+	SKELDIR=`dirname $(readlink $0)`
+else
+	SKELDIR=`dirname $0`
+fi
 WORKDIR="`pwd`"
 
 list_languages() {
