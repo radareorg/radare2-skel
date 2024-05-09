@@ -1,0 +1,7 @@
+{
+	"name": "my first r2 script",
+	"devDependencies": {
+		"r2papi": "^0.3.2",
+		"@types/node": "^20.9.0"
+	}
+}
