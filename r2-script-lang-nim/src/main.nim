@@ -8,3 +8,5 @@ var r = r2papi.R2Papi()
 var o = r.cmdj("ij")
 var fileName = o["core"]["file"].str
 echo (fmt"filename is: {fileName}")
+
+echo("Goodbye From Nim");
