@@ -10,14 +10,14 @@ WORKDIR="`pwd`"
 list_languages() {
 	(
 	 cd ${SKELDIR} || exit 1
-	 ls -F|grep / | awk -F - '{print $4}'|sed -e 's,/,,'|sort -u
+	 ls -F | grep r2 | grep / | awk -F - '{print $4}' | sed -e 's,/,,' | sort -u
 	)
 }
 
 list_templates() {
 	(
 	 cd ${SKELDIR} || exit 1
-	 ls -F | grep /$ | sed -e 's,/,,'
+	 ls -F | grep r2 | grep /$ | sed -e 's,/,,'
 	)
 }
 
