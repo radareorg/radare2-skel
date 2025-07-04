@@ -1,6 +1,6 @@
 LIBEXT=$(shell r2 -HR2_LIBEXT)
-CFLAGS+=$(shell pkg-config --cflags r_core)
-LDFLAGS+=$(shell pkg-config --libs r_core)
+CFLAGS+=$(shell pkg-config --cflags r_core) -fPIC
+LDFLAGS+=$(shell pkg-config --libs r_core) -fPIC
 R2_USER_PLUGINS=$(shell r2 -HR2_USER_PLUGINS)
 
 CORE_HELLO=src/core_hello.$(LIBEXT)
