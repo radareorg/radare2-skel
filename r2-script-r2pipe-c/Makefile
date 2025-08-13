@@ -12,3 +12,6 @@ $(TARGET): main.c
 
 clean:
 	rm -f $(TARGET)
+
+test:
+	r2 -qc '#!pipe ./hello' -- | grep world
