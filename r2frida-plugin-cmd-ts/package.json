@@ -1,0 +1,7 @@
+{
+	"name": "my first r2frida plugin",
+	"version": "0.0.1",
+	"devDependencies": {
+		"@types/node": "^20.9.0"
+	}
+}
