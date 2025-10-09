@@ -105,7 +105,7 @@ func goHelloCall(cps *C.RCorePluginSession, input *C.char) C.int {
 		return 0
 	}
 
-	message, handled := handleHelloCommand(session, C.GoString(input))
+	message, handled := handleHelloCommand(session, C.GoString(input), newCoreCommander(cps))
 	if !handled {
 		return 0
 	}

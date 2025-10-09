@@ -19,3 +19,23 @@ make user-install
 ```
 
 Use this skeleton as a starting point for authoring Go-based core plugins without a separate C shim.
+
+## Running r2 commands
+
+The helper created in `src/r2cmd_shim.go` exposes the `r2Commander` interface so Go code can execute core commands without touching C types:
+
+```go
+func runPrint(cps *C.RCorePluginSession) {
+	r2 := newCoreCommander(cps)
+	if r2 == nil {
+		return
+	}
+	if out, err := r2.Cmd("pd 1"); err == nil {
+		fmt.Println(out)
+	}
+}
+```
+
+The snippet assumes the surrounding Go file already imports `"C"` via a cgo preamble.
+
+The updated `hello` plugin uses this helper internally when the session is switched to the `r2clippy` mode (`hello clippy`).

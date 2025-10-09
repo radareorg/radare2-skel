@@ -8,7 +8,7 @@ CORE_HELLO=src/$(LIBCORE_HELLO)
 
 all: $(CORE_HELLO)
 
-$(CORE_HELLO):
+$(CORE_HELLO): src/core_hello.go
 	GOCACHE=$(GOCACHE) GO111MODULE=off CGO_CFLAGS="$(CFLAGS)" CGO_LDFLAGS="$(LDFLAGS)" go build -buildmode=c-shared -o $(CORE_HELLO) ./src
 
 clean:
