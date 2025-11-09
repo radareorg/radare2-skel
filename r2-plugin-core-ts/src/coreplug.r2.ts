@@ -1,4 +1,5 @@
-import { r2, R, NativePointer } from  "r2papi";
+import type { R2PipeSync } from "r2papi";
+declare const r2: R2PipeSync;
 
 function InstantiateCorePlugin() {
     r2.unload("core", "mycore");
