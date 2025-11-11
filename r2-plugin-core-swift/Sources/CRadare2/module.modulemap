@@ -1,0 +1,5 @@
+module CRadare2 {
+    header "shim.h"
+    link "r_core"
+    export *
+}
