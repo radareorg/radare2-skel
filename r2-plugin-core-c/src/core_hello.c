@@ -30,11 +30,10 @@ static bool hello_init(RCorePluginSession *cps) {
 }
 
 static bool hello_fini(RCorePluginSession *cps) {
-	HelloData *hd = R_NEW0 (HelloData);
-	if (hd) {
-		free (hd->name);
-		free (hd);
-	}
+	HelloData *hd = cps->data;
+	free (hd->name);
+	free (hd);
+	cps->data = NULL;
 	return true;
 }
 
